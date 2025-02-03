@@ -29,6 +29,8 @@
     top: 0;
     right: 0;
     z-index: 0;
+    transform: translateX(100rem);
+    transition: transform 0.5s ease;
 }
 
 .career {
@@ -105,3 +107,4 @@
     color: #7780A3;
     margin-right: 38vw;
 }
+
