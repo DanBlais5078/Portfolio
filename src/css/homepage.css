@@ -1,0 +1,107 @@
+.background-dot {
+    width: 0.7rem;
+    height: 0.7rem;
+    margin: 0.75rem;
+    padding: 0.3rem;
+    border-radius: 50%;
+    opacity: 0.85;
+    cursor: crosshair;
+}
+
+.dot-point {
+    opacity: 0.25;
+    background: linear-gradient(135deg, black, white);
+    width: 0.7rem;
+    height: 0.7rem;
+    padding: 0.3rem;
+    border-radius: 50%;
+}
+
+.background-grid {
+    display: grid;
+    width: fit-content;
+}
+
+.background-grid-container {
+    position: absolute;
+    pointer-events: auto;
+    margin: 8rem 3rem 0 0;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.career {
+    font-size: 7rem;
+    color: #747D9F;
+    margin: 0.25rem 0 2rem 0;
+}
+
+.home-button-container {
+    margin: 5rem 0 0 25rem;
+    transform: translateY(100rem);
+    transition: transform 0.5s ease;
+}
+
+.home-container {
+    pointer-events: none;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    margin: 25vh 0 0 25rem;
+    position: relative;
+    z-index: 1;
+    transform: translateY(100rem);
+    transition: transform 0.5s ease;
+}
+
+.greeting {
+    font-size: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #4BD4B3;
+    margin-bottom: 0.5srem;
+}
+
+.highlight {
+    color: #4BD4B3;
+    font-weight: bold;
+}
+
+.home-button {
+    color: #4BD4B3;
+    font-size: 1.5rem;
+    border: 2px solid #4BD4B3;
+    padding: 1.25rem;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background 0.5s ease;
+}
+
+.home-button:hover {
+    background: linear-gradient(135deg, #4BD4B3, #00A1FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: 2px solid transparent;
+    border-image: linear-gradient(135deg, #4BD4B3, #00A1FF) 1;
+    border-radius: 0.5rem;
+}
+
+.home-button-container .home-button:first-of-type {
+    margin-right: 4rem;
+}
+
+.name {
+    font-size: 8rem;
+    color: #C0CAF3;
+    margin: 0.5rem 0 0.25rem 0;
+}
+
+.quick-about {
+    font-size: 1.75rem;
+    color: #7780A3;
+    margin-right: 38vw;
+}
