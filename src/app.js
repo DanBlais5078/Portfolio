@@ -5,6 +5,9 @@ import { ReactComponent as Linkedin } from './assets/linkedin.svg';
 import { ReactComponent as CV } from './assets/cv.svg';
 import LandingPage from './landing';
 import AboutPage from './about';
+import QualificationsPage from './qualifications';
+import ProjectsPage from './projects';
+import ContactPage from './contact';
 import './css/app.css';
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
       <main>
         <LandingPage />
         <AboutPage />
+        <QualificationsPage />
+        <ProjectsPage />
+        <ContactPage />
       </main>
     </div>
   );

@@ -23,7 +23,7 @@ function LandingPage() {
   }, []);
   return (
     <div>
-      <div className="home-container">
+      <div id="home" className="home-container">
         <h1 className="greeting">{greeting()}</h1>
         <h1 className="name">Dan Blais.</h1>
         <h1 className="career">Full-Stack Web Developer</h1>

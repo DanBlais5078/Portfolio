@@ -1,10 +1,10 @@
-.qualifications {
+.projects {
     display: flex;
     flex-direction: column;
     margin: 20vh 0 0 13rem;
 }
 
-.qualifications-header {
+.projects-header {
     color: #C0CAF3;
     font-size: 4rem;
     margin: 0 auto 5rem auto;
