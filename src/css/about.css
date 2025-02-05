@@ -1,0 +1,135 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    margin: 35vh 0 0 13rem;
+}
+
+.about-content {
+    display: flex;
+}
+
+.about-header {
+    color: #C0CAF3;
+    font-size: 4rem;
+    margin: 0 auto 5rem auto;
+}
+
+.about-text {
+    font-size: 2rem;
+    color: #747D9F; 
+}
+
+.about-text-container {
+    padding: 0 2rem 0 4rem;
+}
+
+.folder-icon {
+    margin-right: 0.65rem;
+}
+
+.hobbies {
+    border: 2px solid #C0CAF3;
+    border-radius: 1rem;
+    box-shadow: 0 0.3rem 0 0 #121212;
+    margin: 2.5rem 0 0 0;
+}
+
+.hobbies-button {
+    background-color: transparent;
+    border: none;
+}
+
+.hobbies-header {
+    color: #C0CAF3;
+    font-size: 1.35rem;
+    margin-right: 7rem;
+}
+
+.hobbies-header-container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-right: auto;
+}
+
+.hobbies-icon {
+    fill: #C0CAF3;
+}
+
+.hobbies-seperator {
+    height: 2px;
+    background-color: #C0CAF3;
+}
+
+.hobbies-text {
+    font-size: 1.25rem;
+    color: #C0CAF3;
+}
+
+.hobbies-text-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+}
+
+.hobbies-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.location {
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    margin: 0 1rem 0 0;
+    box-shadow: 0 0.3rem 0 0 #121212;
+}
+
+.location:first-child {
+    background-color: #747D9F;
+}
+
+.location:last-child {
+    background-color: #555555;
+}
+
+.location-container {
+    display: flex;
+}
+
+.location-dot {
+    border-radius: 50%;
+    background-color: lightgreen;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.75rem;
+}
+
+.osx-dot {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    margin: 0.25rem 0.5rem;
+    background: radial-gradient(circle, #d0a31d 0%,#ffbd2e 70%, #d0a31d 100%);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.osx-dot:first-child {
+    background: radial-gradient(circle,#d0453e 0%, #ff5f57 70%, #d0453e 100%);
+    margin-left: 1.5rem;
+}
+
+.osx-dot:nth-child(3) {
+    background: radial-gradient(circle, #388E3C 0%, #4CAF50 70%, #388E3C 100%);
+}
+
+.osx-dot-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-right: auto;
+}

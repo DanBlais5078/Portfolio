@@ -1,38 +1,79 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as Logo } from './assets/logo.svg';
 import { ReactComponent as Github } from './assets/github.svg';
 import { ReactComponent as Linkedin } from './assets/linkedin.svg';
 import { ReactComponent as CV } from './assets/cv.svg';
 import LandingPage from './landing';
+import AboutPage from './about';
 import './css/app.css';
 
 function App() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <Navbar />
       <Sidebar />
       <main>
         <LandingPage />
+        <AboutPage />
       </main>
     </div>
   );
 }
 
 function Navbar() {
+  const [activeLink, setActiveLink] = useState('');
+
+  const handleScroll = () => {
+    const sections = document.querySelectorAll('div[id]');
+    let current = '';
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+
+      if (window.scrollY >= sectionTop - sectionHeight / 3 && window.scrollY < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    setActiveLink(current);
+  };
+
+  const handleLinkClick = (event, sectionId) => {
+    event.preventDefault();
+    setActiveLink(sectionId);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      setActiveLink(hash);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <nav className="nav">
-      <Link to="/" className="nav-logo-link">
-        <Logo className="nav-logo"/>
-      </Link>
+      <a href="#" className="nav-logo-link">
+        <Logo className="nav-logo" />
+      </a>
       <div className="nav-links">
-        <Link to="/about" className="nav-link">About</Link>
-          <p className="nav-link-spacer">/</p>
-        <Link to="/about" className="nav-link">Qualifications</Link>
-          <p className="nav-link-spacer">/</p>
-        <Link to="/about" className="nav-link">Projects</Link>
-          <p className="nav-link-spacer">/</p>
-        <Link to="/about" className="nav-link">Contact</Link>
+        <a href="#about" className={`nav-link ${activeLink === 'about' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'about')}>About</a>
+        <p className="nav-link-spacer">/</p>
+        <a href="#qualifications" className={`nav-link ${activeLink === 'qualifications' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'qualifications')}>Qualifications</a>
+        <p className="nav-link-spacer">/</p>
+        <a href="#projects" className={`nav-link ${activeLink === 'projects' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'projects')}>Projects</a>
+        <p className="nav-link-spacer">/</p>
+        <a href="#contact" className={`nav-link ${activeLink === 'contact' ? 'active' : ''}`} onClick={(e) => handleLinkClick(e, 'contact')}>Contact</a>
       </div>
     </nav>
   );

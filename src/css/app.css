@@ -58,8 +58,7 @@
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after,
-.nav-link.selected::after { 
+.nav-link.active::after  { 
     transform: scaleX(1);
 }
 
