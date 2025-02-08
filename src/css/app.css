@@ -83,6 +83,7 @@
     top: 60px;
     left: 0;
     bottom: 0;
+    z-index: 1000;
 }
 
 .sidebar-icon {

@@ -12,7 +12,7 @@ import AboutImage from './assets/about.jpg';
 function AboutPage() {
     return (
         <div id="about" className="about">
-            <h2 className="about-header" >About Me</h2>
+            <h2 className="about-header" >About Me.</h2>
             <div className="about-content">
                 <img src={AboutImage} alt='Dan Blais' className="about-image" />
                 <div className="about-text-container">

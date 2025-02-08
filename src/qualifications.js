@@ -8,28 +8,29 @@ import CatchDupeImage from './assets/catch-dupe.png';
 function QualificationsPage () {
   return (
     <div id="qualifications" className="qualifications">
-        <h2 className="qualifications-header">My Qualifications</h2>
+        <h2 className="qualifications-header">My Qualifications.</h2>
         <div className="programming-languages">
             <h3 className="programming-languages-header">Programming Languages and Frameworks</h3>
             <div className="search-container">
               <SearchIcon className="search-icon" />
-              <input type="text" placeholder="Search Languages" className="search-bar" />
+              <input type="text" placeholder="Search Languages or Frameworks" className="search-bar" />
             </div>
             <ul className="programming-languages-list">
-                <li className="programming-language">HTML</li>
-                <li className="programming-language">JavaScript</li>
-                <li className="programming-language">NodeJS</li>
-                <li className="programming-language">ReactJS</li>
-                <li className="programming-language">ExpressJS</li>
-                <li className="programming-language">AnimeJS</li>
-                <li className="programming-language">Axios</li>
-                <li className="programming-language">Ajax</li>
-                <li className="programming-language">Python</li>
-                <li className="programming-language">CSS</li>
-                <li className="programming-language">SCSS</li>
-                <li className="programming-language">PHP</li>
-                <li className="programming-language">SQL</li>
-            </ul>
+              <li className="programming-language js-tag">JavaScript</li>
+              <li className="programming-language js-tag">NodeJS</li>
+              <li className="programming-language js-tag">ReactJS</li>
+              <li className="programming-language js-tag">ExpressJS</li>
+              <li className="programming-language js-tag">AnimeJS</li>
+              <li className="programming-language js-tag">ThreeJS</li>
+              <li className="programming-language js-tag">Axios</li>
+              <li className="programming-language js-tag">Ajax</li>
+              <li className="programming-language css-tag">CSS</li>
+              <li className="programming-language css-tag">SCSS</li>
+              <li className="programming-language html-tag">HTML</li>
+              <li className="programming-language php-tag">PHP</li>
+              <li className="programming-language python-tag">Python</li>
+              <li className="programming-language sql-tag">SQL</li>
+        </ul>
         </div>
         <div className="education">
             <h3 className="education-header">Education</h3>

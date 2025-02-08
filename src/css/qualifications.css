@@ -23,7 +23,7 @@
 }
 
 .education {
-    margin-right: 30vw;
+    margin-right: 4rem;
 }
 
 .education-header, .programming-languages-header, .experience-header {
@@ -42,7 +42,7 @@
 }
 
 .experience {
-    margin: 4rem 20vw 0 0;
+    margin: 5rem 4rem 0 0;
 }
 
 .link-icon {
@@ -69,7 +69,8 @@
 }
 
 .programming-languages {
-    margin: 0 40vw 4rem 0;
+    margin: 0 30vw 5rem 0;
+    z-index: 1;
 }
 
 .programming-language {
@@ -98,7 +99,7 @@
 .qualifications {
     display: flex;
     flex-direction: column;
-    margin: 20vh 0 0 13rem;
+    margin: 10vh 0 0 13rem;
     padding-top: 0.5rem;
 }
 
@@ -139,4 +140,34 @@
 
 .year, .date {
     margin-left: auto;
+}
+
+.js-tag {
+    background-color: #4A90E2; /* Cool Blue for JavaScript */
+    color: white; /* White text for contrast */
+}
+
+.css-tag {
+    background-color: #1ABC9C; /* Cool Green for CSS */
+    color: white; /* White text for contrast */
+}
+
+.html-tag {
+    background-color: #9B59B6; /* Cool Amber for HTML */
+    color: white; /* White text for contrast */
+}
+
+.php-tag {
+    background-color: #7ED321; /* Cool Purple for PHP */
+    color: white; /* White text for contrast */
+}
+
+.python-tag {
+    background-color: #F5A623; /* Cool Teal for Python */
+    color: white; /* White text for contrast */
+}
+
+.sql-tag {
+    background-color: #E74C3C; /* Cool Red for SQL */
+    color: white; /* White text for contrast */
 }

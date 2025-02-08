@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import anime from "animejs";
 import './css/landing.css'
-
-const GRID_WIDTH = 25;
-const GRID_HEIGHT = 27;
+import * as THREE from 'three';
+import StarTexture from './assets/star.png';
 
 function LandingPage() {
   useEffect(() => {
@@ -13,16 +12,10 @@ function LandingPage() {
       duration: 1000,            
       easing: 'easeOutExpo',
     });
-    
-    anime({
-      targets: '.background-grid-container',
-      translateX: '0%',
-      duration: 1000,            
-      easing: 'easeOutExpo',
-    });
   }, []);
   return (
     <div>
+      <ThreeRenderer />
       <div id="home" className="home-container">
         <h1 className="greeting">{greeting()}</h1>
         <h1 className="name">Dan Blais.</h1>
@@ -40,7 +33,6 @@ function LandingPage() {
         <input type="button" className="home-button" value="Contact Me" onClick={() => {window.location.href = "https://www.linkedin.com/in/dan-blais-2127042b3"}}></input>
         <input type="button" className="home-button" value="See My Work"></input>
       </div>
-      <BackgroundGridContainer />
     </div>
   )
 }
@@ -61,68 +53,109 @@ function greeting() {
     return greeting + ", I'm";
   }
   
-  function BackgroundGridContainer() {
-      return (
-        <div className="background-grid-container">
-          <BackgroundGrid />
-        </div>
-      )
-  }
-  
-  function BackgroundGrid() {
-    const dots = [];
-    let index = 0;
-  
-    const dotClicked = (dot) => {
-      anime({
-        targets: ".dot-point",
-        scale: [
-          {value: 1.35, easing: "easeInOutSine", duration: 250},
-          {value: 1, easing: "easeInOutQuad", duration: 500}
-        ],
-        translateY: [
-          {value: -15, easing: "easeInOutSine", duration: 250},
-          {value: 0, easing: "easeInOutQuad", duration: 500}
-        ],
-        opacity: [
-          {value: 1, easing: "easeInOutSine", duration: 250},
-          {value: 0.25, easing: "easeInOutQuad", duration: 500}
-        ],
-        delay: anime.stagger(100, {
-          grid: [GRID_WIDTH, GRID_HEIGHT],
-          from: dot.target.dataset.index,
-        }),
-      })
-    };
-  
-    for (let i = 0; i < GRID_WIDTH; i++) {
-      for (let j = 0; j < GRID_HEIGHT; j++) {
-        dots.push(
-        <div 
-          onClick={dotClicked}
-          className="background-dot"
-          data-index={index}
-          key={`${i}-${j}`}
-        >
-          <div 
-            className="dot-point"
-            data-index={index}
-          >
-          </div>
-        </div>
-        );
-        index++;
-      }
+  const ThreeRenderer = () => {
+    const mountRef = useRef(null);
+    const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight
     }
-      return (
-        <div
-          style={{gridTemplateColumns: `repeat(${GRID_WIDTH}, 1fr)` }}
-          className="background-grid"
-        >
-          {dots}
-        </div>
-      )
-  }
+    const loader = new THREE.TextureLoader();
+    const starsTexture = loader.load(StarTexture);
+
+    useEffect(() => {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 5);
+        camera.position.x = -1.3;
+        camera.position.y = 0;
+        camera.position.z = 2;
+        scene.add(camera);
+        const renderer = new THREE.WebGLRenderer();
+
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setClearColor(new THREE.Color('#0F172A'), 1);
+        mountRef.current.appendChild(renderer.domElement);
+
+        const material = new THREE.PointsMaterial({ size: 0.015, opacity: 0.7, map: starsTexture, transparent: true});
+        const planetMaterial = new THREE.PointsMaterial({ size: 0.015, color: new THREE.Color(0.2, 0.2, 0.75), opacity: 0.1, transparent: true});
+
+        const starsGeometry = new THREE.BufferGeometry();
+        const starsCount = 5000;
+        const posArray = new Float32Array(starsCount * 3);
+        const sphereGeometry = new THREE.SphereGeometry(1.25, 80, 80);
+
+        for (let i = 0; i < starsCount * 3; i++) {
+            posArray[i] = ((Math.random() - 0.5) * 9);
+        }
+
+        starsGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+
+        const stars = new THREE.Points(starsGeometry, material);
+        const planet = new THREE.Points(sphereGeometry, planetMaterial);
+        planet.position.z = -0.55;
+        planet.rotation.x = -0.15
+        planet.rotation.y = 0.1;
+        planet.rotation.z = -0.5;
+        scene.add(stars, planet);
+
+        const pointLight = new THREE.PointLight(0xffffff, 0.1)
+        pointLight.position.x = 2
+        pointLight.position.y = 3
+        pointLight.position.z = 4
+        scene.add(pointLight)
+
+        document.addEventListener('mousemove', animateStars);
+
+        let mouseX = 0;
+        let mouseY = 0;
+        function animateStars(event) {
+          mouseX = event.clientX;
+          mouseY = event.clientY;
+        }
+
+        const clock = new THREE.Clock();
+
+        const animate = () => {
+            const elapsedTime = clock.getElapsedTime();
+
+            requestAnimationFrame(animate);
+            planet.rotation.y = -0.05 * elapsedTime;
+            stars.rotation.y = -0.1 * elapsedTime;
+
+            if(mouseX > 0) {
+              stars.rotation.x = -mouseY * (elapsedTime * 0.00005);
+              stars.rotation.y = -mouseX * (elapsedTime * 0.00005);
+              planet.rotation.x = -mouseY * (elapsedTime * 0.00005);
+              planet.rotation.y = -mouseX * (elapsedTime * 0.00005);
+              planet.position.x = -mouseX * 0.00009;
+              planet.position.y = -mouseY * 0.00009;
+            }
+            renderer.render(scene, camera);
+        };
+        animate();
+
+        window.addEventListener('resize', () =>
+            {
+                sizes.width = window.innerWidth
+                sizes.height = window.innerHeight
+            
+                camera.aspect = sizes.width / sizes.height
+                camera.updateProjectionMatrix()
+            
+                renderer.setSize(sizes.width, sizes.height)
+                renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+                renderer.setClearColor(new THREE.Color('#0F172A'), 1)
+            })
+
+        return () => {
+            if (mountRef.current) {
+                mountRef.current.removeChild(renderer.domElement);
+            }
+        };
+    }, []);
+    
+
+    return <div ref={mountRef} className="three-renderer" />;
+};
 
 export default LandingPage;
   
