@@ -9,3 +9,8 @@
     font-size: 4rem;
     margin: 0 auto 5rem auto;
 }
+
+.project-image {
+    width: 89vw;
+    height: 85vh;
+}
