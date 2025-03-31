@@ -16,11 +16,12 @@ function QualificationsPage () {
               <input type="text" placeholder="Search Languages or Frameworks" className="search-bar" />
             </div>
             <ul className="programming-languages-list">
+              <li className="programming-language js-tag">Java</li>
               <li className="programming-language js-tag">JavaScript</li>
+              <li className="programming-language js-tag">TypeScript</li>
               <li className="programming-language js-tag">NodeJS</li>
               <li className="programming-language js-tag">ReactJS</li>
               <li className="programming-language js-tag">ExpressJS</li>
-              <li className="programming-language js-tag">AnimeJS</li>
               <li className="programming-language js-tag">ThreeJS</li>
               <li className="programming-language js-tag">Axios</li>
               <li className="programming-language js-tag">Ajax</li>

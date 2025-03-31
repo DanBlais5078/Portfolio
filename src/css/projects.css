@@ -1,7 +1,20 @@
 .projects {
+    position: relative;
+    text-align: center;
+    margin: 10vh 0 0 13rem;
+}
+
+.projects-container {
     display: flex;
     flex-direction: column;
-    margin: 10vh 0 0 13rem;
+}
+
+.panel {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
 }
 
 .projects-header {
@@ -10,7 +23,7 @@
     margin: 0 auto 5rem auto;
 }
 
-.project-image {
-    width: 89vw;
+.panel img {
+    width: 88vw;
     height: 85vh;
 }
