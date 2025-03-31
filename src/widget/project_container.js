@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';  // Import PropTypes
 import '../css/projects_container.css';
+import '../css/qualifications.css';
 
 const ProjectShowcase = ({ images, tags, description, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,6 +23,25 @@ const ProjectShowcase = ({ images, tags, description, title }) => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
+  // Map of tags to classes
+  const tagClassMapping = {
+    Java: 'js-tag',
+    JavaScript: 'js-tag',
+    TypeScript: 'js-tag',
+    NodeJS: 'js-tag',
+    ReactJS: 'js-tag',
+    ExpressJS: 'js-tag',
+    Axios: 'js-tag',
+    Ajax: 'js-tag',
+    CSS: 'css-tag',
+    SCSS: 'css-tag',
+    Bootstrap: 'css-tag',
+    HTML: 'html-tag',
+    PHP: 'php-tag',
+    Python: 'python-tag',
+    SQL: 'sql-tag',
+  };
+
   return (
     <div className="project-showcase-container">
       <div className="image-container">
@@ -30,9 +50,13 @@ const ProjectShowcase = ({ images, tags, description, title }) => {
         
         {/* Tags */}
         <div className="tags">
-          {tags.map((tag, index) => (
-            <span key={index} className="tag">{tag}</span>
-          ))}
+          {tags.map((tag, index) => {
+            // Get the corresponding tag class from tagClassMapping
+            const tagClass = tagClassMapping[tag] || 'default-tag';  // Default class if not found in the mapping
+            return (
+              <span key={index} className={`programming-language ${tagClass}`}>{tag}</span>
+            );
+          })}
         </div>
         
         {/* Title and Description */}
@@ -60,4 +84,3 @@ ProjectShowcase.propTypes = {
 };
 
 export default ProjectShowcase;
-

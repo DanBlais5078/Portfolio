@@ -24,7 +24,7 @@ function ContactPage() {
 
     return (
         <div id="contact" className="contact">
-            <h2 className="contact-header">Contact Me</h2>
+            <h2 className="contact-header">Contact Me.</h2>
             <p className="contact-description">I am interested in new opportunities to apply my skills as a developer for your business and would love to hear from you! I am knowledgeable in app design, development, and site upkeep. I am very passionate about web and UI development and will work tirelessly to provide you with the best possible web-based solution for your needs. Fill out the form below to get in touch with me and I will get back to you as soon as possible.</p>
             <form className="contact-form" onSubmit={handleSubmit}>
                 <input

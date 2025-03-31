@@ -5,7 +5,8 @@
     flex-direction: column;
     background-color: #0F172A;
     margin: 10vh 5rem 0 13rem;
-    padding: 4rem 0;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
 }
 
 .contact-description {

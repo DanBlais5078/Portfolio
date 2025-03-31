@@ -53,7 +53,7 @@ function Navbar() {
     setActiveLink(sectionId);
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -69,7 +69,17 @@ function Navbar() {
 
   return (
     <nav className="nav">
-      <a href="#" className="nav-logo-link">
+      <a
+        href="#"
+        className="nav-logo-link"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0, 
+            behavior: 'smooth', 
+          });
+        }}
+      >
         <Logo className="nav-logo" />
       </a>
       <div className="nav-links">

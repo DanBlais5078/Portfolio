@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './css/qualifications.css';
-import  { ReactComponent as LinkIcon } from './assets/link.svg';
+import { ReactComponent as LinkIcon } from './assets/link.svg';
 import { ReactComponent as SearchIcon } from './assets/search.svg';
 import AlgonquinImage from './assets/algonquin-college.png';
 import CatchDupeImage from './assets/catch-dupe.png';
 
 function QualificationsPage () {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value.toLowerCase());
+  };
+
   return (
     <div id="qualifications" className="qualifications">
         <h2 className="qualifications-header">My Qualifications.</h2>
@@ -13,25 +19,32 @@ function QualificationsPage () {
             <h3 className="programming-languages-header">Programming Languages and Frameworks</h3>
             <div className="search-container">
               <SearchIcon className="search-icon" />
-              <input type="text" placeholder="Search Languages or Frameworks" className="search-bar" />
+              <input 
+                type="text" 
+                placeholder="Filter Languages or Frameworks" 
+                className="search-bar" 
+                onChange={handleSearchChange} 
+                value={searchQuery}
+              />
             </div>
             <ul className="programming-languages-list">
-              <li className="programming-language js-tag">Java</li>
-              <li className="programming-language js-tag">JavaScript</li>
-              <li className="programming-language js-tag">TypeScript</li>
-              <li className="programming-language js-tag">NodeJS</li>
-              <li className="programming-language js-tag">ReactJS</li>
-              <li className="programming-language js-tag">ExpressJS</li>
-              <li className="programming-language js-tag">ThreeJS</li>
-              <li className="programming-language js-tag">Axios</li>
-              <li className="programming-language js-tag">Ajax</li>
-              <li className="programming-language css-tag">CSS</li>
-              <li className="programming-language css-tag">SCSS</li>
-              <li className="programming-language html-tag">HTML</li>
-              <li className="programming-language php-tag">PHP</li>
-              <li className="programming-language python-tag">Python</li>
-              <li className="programming-language sql-tag">SQL</li>
-        </ul>
+              <li className="programming-language js-tag" hidden={searchQuery && !'Java'.toLowerCase().includes(searchQuery)}>Java</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'JavaScript'.toLowerCase().includes(searchQuery)}>JavaScript</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'TypeScript'.toLowerCase().includes(searchQuery)}>TypeScript</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'NodeJS'.toLowerCase().includes(searchQuery)}>NodeJS</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'ReactJS'.toLowerCase().includes(searchQuery)}>ReactJS</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'ExpressJS'.toLowerCase().includes(searchQuery)}>ExpressJS</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'Axios'.toLowerCase().includes(searchQuery)}>Axios</li>
+              <li className="programming-language js-tag" hidden={searchQuery && !'Ajax'.toLowerCase().includes(searchQuery)}>Ajax</li>
+              <li className="programming-language css-tag" hidden={searchQuery && !'CSS'.toLowerCase().includes(searchQuery)}>CSS</li>
+              <li className="programming-language css-tag" hidden={searchQuery && !'SCSS'.toLowerCase().includes(searchQuery)}>SCSS</li>
+              <li className="programming-language css-tag" hidden={searchQuery && !'Bootstrap'.toLowerCase().includes(searchQuery)}>Bootstrap</li>
+              <li className="programming-language html-tag" hidden={searchQuery && !'HTML'.toLowerCase().includes(searchQuery)}>HTML</li>
+              <li className="programming-language php-tag" hidden={searchQuery && !'PHP'.toLowerCase().includes(searchQuery)}>PHP</li>
+              <li className="programming-language python-tag" hidden={searchQuery && !'Python'.toLowerCase().includes(searchQuery)}>Python</li>
+              <li className="programming-language sql-tag" hidden={searchQuery && !'SQL'.toLowerCase().includes(searchQuery)}>SQL</li>
+              <li className="programming-language sql-tag" hidden={searchQuery && !'NoSQL'.toLowerCase().includes(searchQuery)}>NoSQL</li>
+            </ul>
         </div>
         <div className="education">
             <h3 className="education-header">Education</h3>
@@ -76,7 +89,7 @@ function QualificationsPage () {
             </div>
         </div>
     </div>
-  )
+  );
 }
 
 export default QualificationsPage;
