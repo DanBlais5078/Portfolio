@@ -6,7 +6,7 @@
     background-color: #0F172A;
     margin: 10vh 5rem 0 13rem;
     padding-top: 1rem;
-    padding-bottom: 6rem;
+    padding-bottom: 5rem;
 }
 
 .contact-description {
@@ -32,6 +32,18 @@
     font-size: 1.5rem;
     padding: 1rem;
     border-radius: 1rem;
+}
+
+.email-link {
+    text-decoration: none;
+    color: #4BD4B3;
+}
+
+.email-link:hover {
+    background: linear-gradient(135deg, #4BD4B3, #00A1FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 textarea {
