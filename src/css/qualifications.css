@@ -17,6 +17,13 @@
     font-family: "JetBrains Mono", monospace;
 }
 
+.algonquin-link:hover {
+    background: linear-gradient(135deg, #4BD4B3, #00A1FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .career-container {
     display: flex;
     align-items: center;

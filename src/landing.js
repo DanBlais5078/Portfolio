@@ -13,6 +13,7 @@ function LandingPage() {
       easing: 'easeOutExpo',
     });
   }, []);
+  
   return (
     <div>
       <ThreeRenderer />
