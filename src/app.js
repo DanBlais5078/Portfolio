@@ -99,7 +99,7 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <div className="sidebar-items">
-        <a href="assets/DanBlaisResume.pdf" className="sidebar-link">
+        <a href="assets/DanBlaisResume.pdf" className="sidebar-link" download>
           <CV className="sidebar-icon" />
         </a>
         <a href="https://github.com/DanBlais5078" className="sidebar-link">
