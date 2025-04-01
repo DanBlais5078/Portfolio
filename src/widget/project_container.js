@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';  // Import PropTypes
 import '../css/projects_container.css';
 import '../css/qualifications.css';
@@ -6,19 +6,12 @@ import '../css/qualifications.css';
 const ProjectShowcase = ({ images, tags, description, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Automatically change image every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000); // Change image every 5 seconds
-
-    return () => clearInterval(interval); // Cleanup on unmount
-  }, [images.length]);
-
+  // Handle previous image (left arrow click)
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
+  // Handle next image (right arrow click)
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -84,3 +77,4 @@ ProjectShowcase.propTypes = {
 };
 
 export default ProjectShowcase;
+
