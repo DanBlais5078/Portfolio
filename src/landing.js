@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import anime from "animejs";
 import './css/landing.css'
 import * as THREE from 'three';
@@ -53,7 +53,6 @@ function LandingPage() {
             });
           }}
         />
-
       </div>
     </div>
   )
@@ -77,10 +76,11 @@ function greeting() {
 
 const ThreeRenderer = () => {
   const mountRef = useRef(null);
+  const [isMouseActive, setIsMouseActive] = useState(false); // Default as false for spinning
   const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
-  }
+  };
   const loader = new THREE.TextureLoader();
   const starsTexture = loader.load(StarTexture);
 
@@ -119,63 +119,81 @@ const ThreeRenderer = () => {
     planet.rotation.z = -0.5;
     scene.add(stars, planet);
 
-    const pointLight = new THREE.PointLight(0xffffff, 0.1)
-    pointLight.position.x = 2
-    pointLight.position.y = 3
-    pointLight.position.z = 4
-    scene.add(pointLight)
-
-    document.addEventListener('mousemove', animateStars);
+    const pointLight = new THREE.PointLight(0xffffff, 0.1);
+    pointLight.position.set(2, 3, 4);
+    scene.add(pointLight);
 
     let mouseX = 0;
     let mouseY = 0;
+
+    let inactivityTimer;
+    const mouseTimeout = 1000; // 1 second of inactivity
+
+    // Track mouse movement
     function animateStars(event) {
       mouseX = event.clientX;
       mouseY = event.clientY;
+
+      clearTimeout(inactivityTimer);
+      setIsMouseActive(true);  // Mouse is active
+
+      inactivityTimer = setTimeout(() => {
+        setIsMouseActive(false);  // Mouse is inactive
+      }, mouseTimeout);
     }
 
-    const clock = new THREE.Clock();
+    document.addEventListener('mousemove', animateStars);
+
+    const rotationSpeed = 0.0005;
+    const movementSpeed = 0.0005;
+    const mouseFactor = 0.0005;
 
     const animate = () => {
-      const elapsedTime = clock.getElapsedTime();
-
       requestAnimationFrame(animate);
-      planet.rotation.y = -0.05 * elapsedTime;
-      stars.rotation.y = -0.1 * elapsedTime;
 
-      if (mouseX > 0) {
-        stars.rotation.x = -mouseY * (elapsedTime * 0.00005);
-        stars.rotation.y = -mouseX * (elapsedTime * 0.00005);
-        planet.rotation.x = -mouseY * (elapsedTime * 0.00005);
-        planet.rotation.y = -mouseX * (elapsedTime * 0.00005);
-        planet.position.x = -mouseX * 0.00009;
-        planet.position.y = -mouseY * 0.00009;
+      // Default spinning when mouse is inactive
+      if (!isMouseActive) {
+        planet.rotation.y += rotationSpeed;
+        stars.rotation.y += rotationSpeed;
+      } else {
+        // Adjust rotation based on mouse movement
+        stars.rotation.x = -mouseY * mouseFactor;
+        stars.rotation.y = -mouseX * mouseFactor;
+        planet.rotation.x = -mouseY * mouseFactor;
+        planet.rotation.y = -mouseX * mouseFactor;
+
+        // Adjust movement based on mouse position
+        planet.position.x = -mouseX * movementSpeed;
+        planet.position.y = -mouseY * movementSpeed;
       }
+
       renderer.render(scene, camera);
     };
     animate();
 
+    // Handle window resize
     window.addEventListener('resize', () => {
-      sizes.width = window.innerWidth
-      sizes.height = window.innerHeight
+      sizes.width = window.innerWidth;
+      sizes.height = window.innerHeight;
 
-      camera.aspect = sizes.width / sizes.height
-      camera.updateProjectionMatrix()
+      camera.aspect = sizes.width / sizes.height;
+      camera.updateProjectionMatrix();
 
-      renderer.setSize(sizes.width, sizes.height)
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-      renderer.setClearColor(new THREE.Color('#0F172A'), 1)
-    })
+      renderer.setSize(sizes.width, sizes.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setClearColor(new THREE.Color('#0F172A'), 1);
+    });
 
     return () => {
       if (mountRef.current) {
         mountRef.current.removeChild(renderer.domElement);
       }
     };
-  }, []);
-
+  }, [isMouseActive]);
 
   return <div ref={mountRef} className="three-renderer" />;
 };
 
 export default LandingPage;
+
+
