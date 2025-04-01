@@ -20,9 +20,8 @@ export default async function handler(req, res) {
         // Define the email details
         const mailOptions = {
             from: email,
-            to: process.env.EMAIL_USER,  // Send to your email address
-            subject: subject,
-            text: `${message}\n\nWebsite: ${website || 'Not provided'}`,  // Include website if available
+            to: process.env.EMAIL_USER,
+            text: `${message}\n\nWebsite: ${website || 'Not provided'}`,
         };
 
         try {
