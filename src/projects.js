@@ -37,7 +37,7 @@ function ProjectsPage() {
           <ProjectShowcase
             images={[VinylDestination1, VinylDestination2, VinylDestination3, VinylDestination4, VinylDestination5]}
             tags={['NodeJS', 'ReactJS', 'ExpressJS', 'Bootstrap', 'SQL']}
-            description={'An in-development full stack web application with a responsive, user-friendly front-end and a back-end API.'}
+            description={'An in-development full stack web application with a responsive, user-friendly front-end and a back-end API featuring a working, animated record player on the landing page. The application provides a modern and minimialistic user interface, allowing users to create accounts, log in, and easily browse and place orders for vinyl records and music equipment. The application also features a secure role-based authentication system, ensuring that only authorized users can insert, update, and delete records and equipment and action orders. The application uses a SQL database to store and manage the records and equipment, and a NodeJS server to handle the API requests and responses.'}
             title="Vinyl Destination Webapp and API"
           />
         </div>
@@ -47,8 +47,8 @@ function ProjectsPage() {
           <ProjectShowcase
             images={[ShoppingProject1]}
             tags={['HTML', 'CSS', 'JavaScript', 'PHP', 'SQL']}
-            description={'A mock shopping website using HTML, CSS, JavaScript, PHP, and SQL to create a responsive front-end.'}
-            title="Shopping Website"
+            description={'A mock shopping website using HTML, CSS, JavaScript, PHP, and SQL to create a responsive front-end and secure back-end. The site allows users to create accounts, login, and place orders. The site uses a SQL database to store and manage the orders and users, and a PHP server to handle the API requests and responses. The design of the site is meant to mimic popular e-commerce websites featuring a recent products section, a comprehensive product catalog, a cart, and a checkout page.'}
+            title="Mock Shopping Website"
           />
         </div>
       </div>
