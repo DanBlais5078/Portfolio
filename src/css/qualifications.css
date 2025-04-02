@@ -1,3 +1,4 @@
+/* Default Styles */
 .algonquin-image {
     width: auto;
     height: 22vh;
@@ -5,7 +6,7 @@
 
 .catch-dupe-image {
     height: 21vh;
-    width: 13vw;
+    width: auto;
 }
 
 .algonquin-link {
@@ -121,7 +122,7 @@
 }
 
 .school, .job-title {
-    color: #4BD4B3;;
+    color: #4BD4B3;
     font-size: 2rem;
     margin: 0 0 1rem 0;
 }
@@ -181,4 +182,161 @@
 .sql-tag {
     background-color: #E74C3C; /* Cool Red for SQL */
     color: white; /* White text for contrast */
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+    .qualifications {
+        margin: 5vh 0 0 12rem;
+    }
+
+    .qualifications-header {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .school, .job-title {
+        font-size: 1.75rem;
+    }
+
+    .education-header, .programming-languages-header, .experience-header {
+        font-size: 2.5rem;
+    }
+
+    .program, .year, .company, .date {
+        font-size: 1.25rem;
+    }
+
+    .search-bar {
+        width: 80%;
+    }
+
+    .programming-languages-list {
+        gap: 1rem;
+    }
+
+    .programming-language {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .qualifications {
+        margin: 10vh 0 0 2rem;
+    }
+
+    .qualifications-header {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .school, .job-title {
+        font-size: 1.5rem;
+    }
+
+    .education-header, .programming-languages-header, .experience-header {
+        font-size: 2rem;
+    }
+
+    .program, .year, .company, .date {
+        font-size: 1.1rem;
+    }
+
+    .programming-languages-list {
+        gap: 1rem;
+    }
+
+    .programming-language {
+        font-size: 1.25rem;
+    }
+
+    .search-bar {
+        width: 85%;
+    }
+
+    .career-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .qualifications {
+        margin: 7vh 0 0 1rem;
+    }
+
+    .qualifications-header {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .school, .job-title {
+        font-size: 1.25rem;
+    }
+
+    .education-header, .programming-languages-header, .experience-header {
+        font-size: 1.8rem;
+    }
+
+    .program, .year, .company, .date {
+        font-size: 1rem;
+    }
+
+    .programming-languages-list {
+        gap: 0.8rem;
+    }
+
+    .programming-language {
+        font-size: 1.2rem;
+    }
+
+    .search-bar {
+        width: 90%;
+    }
+
+    .career-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 400px) {
+    .qualifications {
+        margin: 5vh 0 0 1rem;
+    }
+
+    .qualifications-header {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .school, .job-title {
+        font-size: 1.1rem;
+    }
+
+    .education-header, .programming-languages-header, .experience-header {
+        font-size: 1.5rem;
+    }
+
+    .program, .year, .company, .date {
+        font-size: 0.9rem;
+    }
+
+    .programming-languages-list {
+        gap: 0.6rem;
+    }
+
+    .programming-language {
+        font-size: 1rem;
+    }
+
+    .search-bar {
+        width: 95%;
+    }
+
+    .career-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

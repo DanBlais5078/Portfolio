@@ -1,3 +1,4 @@
+/* Default Styles */
 .project-showcase-container {
   margin-right: 5rem;
   position: relative;
@@ -80,3 +81,125 @@
 .arrow:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+/* Responsive Design */
+
+/* For Large Screens (Desktop) */
+@media (max-width: 1200px) {
+  .project-showcase-container {
+    margin-right: 3rem;
+  }
+
+  .image-container {
+    width: 100%;
+    height: auto; /* Allow the height to adjust dynamically */
+  }
+
+  .project-title {
+    font-size: 1.75rem;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .navigation-arrows .arrow {
+    font-size: 1.75rem;
+  }
+}
+
+/* For Medium Screens (Tablets or smaller desktops) */
+@media (max-width: 900px) {
+  .project-showcase-container {
+    margin-right: 2rem;
+  }
+
+  .image-container {
+    flex-direction: column;  /* Stack the images vertically on smaller screens */
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .navigation-arrows .arrow {
+    font-size: 1.5rem;
+  }
+
+  .description-container {
+    padding: 10px 15px;
+  }
+}
+
+/* For Small Screens (Mobile Devices) */
+@media (max-width: 600px) {
+  .project-showcase-container {
+    margin-right: 1rem;
+  }
+
+  .image-container {
+    flex-direction: column;  /* Stack the images vertically on small screens */
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .navigation-arrows .arrow {
+    font-size: 1.25rem;
+  }
+
+  .tags {
+    top: 10px;
+    left: 5%;
+  }
+
+  .description-container {
+    bottom: 5%;
+    padding: 8px 12px;
+  }
+}
+
+/* For Extra Small Screens (Very small mobile) */
+@media (max-width: 400px) {
+  .project-showcase-container {
+    margin-right: 0.5rem;
+  }
+
+  .image-container {
+    flex-direction: column; /* Stack the images vertically */
+    height: auto;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .description {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+
+  .navigation-arrows .arrow {
+    font-size: 1rem;
+    padding: 8px;
+  }
+
+  .description-container {
+    bottom: 3%;
+    padding: 5px 8px;
+  }
+}
+

@@ -1,3 +1,4 @@
+/* Default Styles */
 .contact {
     position: absolute;
     z-index: 10;
@@ -73,4 +74,119 @@ textarea {
     border: 2px solid transparent;
     border-image: linear-gradient(135deg, #4BD4B3, #00A1FF) 1;
     border-radius: 0.5rem;
+}
+
+/* Responsive Design */
+
+/* For Large Screens (Desktop) */
+@media (max-width: 1200px) {
+    .contact {
+        margin: 10vh 3rem 0 10rem; /* Reduce left margin on large screens */
+    }
+
+    .contact-header {
+        font-size: 3.5rem; /* Slightly smaller font size */
+    }
+
+    .contact-description {
+        font-size: 1.75rem; /* Slightly smaller description font size */
+    }
+
+    .contact-form input,
+    textarea {
+        font-size: 1.4rem; /* Smaller input size */
+    }
+
+    .submit-btn {
+        margin: 0 35vw; /* Adjust margin for button */
+    }
+}
+
+/* For Medium Screens (Tablets or smaller desktops) */
+@media (max-width: 900px) {
+    .contact {
+        margin: 5vh 3rem 0 3rem; /* Reduce margins for tablets */
+    }
+
+    .contact-header {
+        font-size: 3rem; /* Smaller font size for header */
+    }
+
+    .contact-description {
+        font-size: 1.6rem; /* Smaller description text */
+        margin-bottom: 3rem; /* Reduce margin */
+    }
+
+    .contact-form {
+        gap: 2rem; /* Reduce gap between form fields */
+    }
+
+    .contact-form input,
+    textarea {
+        font-size: 1.3rem; /* Further reduce input size */
+    }
+
+    .submit-btn {
+        margin: 0 30vw; /* Adjust button margin */
+    }
+}
+
+/* For Small Screens (Mobile Devices) */
+@media (max-width: 600px) {
+    .contact {
+        margin: 3vh 1rem 0 1rem; /* Small margin for mobile */
+    }
+
+    .contact-header {
+        font-size: 2.5rem; /* Smaller header font size for mobile */
+        margin: 0 auto 3rem auto;
+    }
+
+    .contact-description {
+        font-size: 1.4rem; /* Further smaller description text */
+        margin-bottom: 2rem; /* Reduce bottom margin */
+    }
+
+    .contact-form input,
+    textarea {
+        font-size: 1.2rem; /* Smaller input size for mobile */
+    }
+
+    .submit-btn {
+        margin: 0 20vw; /* Smaller button margin */
+        font-size: 1.75rem; /* Smaller font size for submit button */
+    }
+
+    textarea {
+        min-height: 20vh; /* Reduce textarea height for mobile */
+    }
+}
+
+/* For Extra Small Screens (Very small mobile) */
+@media (max-width: 400px) {
+    .contact {
+        margin: 2vh 1rem 0 1rem; /* Minimal margin for very small screens */
+    }
+
+    .contact-header {
+        font-size: 2rem; /* Very small font size for small screens */
+    }
+
+    .contact-description {
+        font-size: 1.3rem; /* Very small font size */
+    }
+
+    .contact-form input,
+    textarea {
+        font-size: 1.1rem; /* Smallest font size */
+    }
+
+    .submit-btn {
+        margin: 0 15vw; /* Very small button margin */
+        font-size: 1.5rem; /* Very small button font size */
+    }
+
+    textarea {
+        min-height: 15vh; /* Adjust textarea size */
+    }
 }

@@ -1,3 +1,4 @@
+/* Default Styles */
 .about {
     display: flex;
     flex-direction: column;
@@ -141,4 +142,210 @@
     justify-content: start;
     align-items: center;
     margin-right: auto;
+}
+
+/* Responsive Design */
+
+/* Large Screens (no change) */
+@media (max-width: 1200px) {
+    .about {
+        margin: 20vh 0 0 10rem;
+    }
+
+    .about-header {
+        font-size: 3.5rem;
+    }
+
+    .about-text {
+        font-size: 1.75rem;
+    }
+
+    .about-image {
+        height: 60vh;
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+
+    .about-text-container {
+        padding: 0 1rem 0 2rem;
+    }
+
+    .hobbies-header {
+        font-size: 1.25rem;
+    }
+
+    .hobbies-text {
+        font-size: 1.35rem;
+    }
+
+    .hobbies-text-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hobbies-seperator {
+        height: 1px;
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .hobbies {
+        margin-top: 2rem; /* Ensure hobbies are below text */
+    }
+}
+
+/* Tablets and Phones (responsive layout change for stacking) */
+@media (max-width: 900px) {
+    .about {
+        margin: 15vh 0 0 4rem;
+    }
+
+    .about-header {
+        font-size: 3rem;
+    }
+
+    .about-text {
+        font-size: 1.5rem;
+    }
+
+    .about-image {
+        height: 50vh;
+    }
+
+    .about-text-container {
+        padding: 0 1rem 0 1.5rem;
+    }
+
+    .hobbies-header {
+        font-size: 1.15rem;
+    }
+
+    .hobbies-text {
+        font-size: 1.25rem;
+    }
+
+    .hobbies-text-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .location-container {
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .osx-dot-container {
+        justify-content: center;
+    }
+
+    /* Change flex-direction to column for stacking image, text, and hobbies */
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .hobbies {
+        margin-top: 2rem; /* Ensure hobbies are below text */
+    }
+}
+
+/* Small Phones */
+@media (max-width: 600px) {
+    .about {
+        margin: 10vh 0 0 1rem;
+        padding-top: 1rem;
+    }
+
+    .about-header {
+        font-size: 2.5rem;
+    }
+
+    .about-text {
+        font-size: 1.25rem;
+    }
+
+    .about-image {
+        height: 40vh;
+    }
+
+    .about-text-container {
+        padding: 0 1rem;
+    }
+
+    .hobbies-header {
+        font-size: 1rem;
+    }
+
+    .hobbies-text {
+        font-size: 1rem;
+    }
+
+    .hobbies-text-container {
+        grid-template-columns: repeat(1, 1fr);
+        margin-top: 2rem;
+    }
+
+    .location-container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .hobbies-seperator {
+        height: 0.5px;
+    }
+
+    .osx-dot-container {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    /* Change flex-direction to column for stacking image, text, and hobbies */
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .hobbies {
+        margin-top: 2rem; /* Ensure hobbies are below text */
+    }
+}
+
+/* Very Small Phones */
+@media (max-width: 400px) {
+    .about {
+        margin: 5vh 0 0 1rem;
+    }
+
+    .about-header {
+        font-size: 2rem;
+    }
+
+    .about-text {
+        font-size: 1rem;
+    }
+
+    .about-image {
+        height: 35vh;
+    }
+
+    .hobbies-header {
+        font-size: 0.9rem;
+    }
+
+    .hobbies-text {
+        font-size: 0.9rem;
+    }
+
+    .hobbies-text-container {
+        margin-top: 1.5rem;
+    }
+
+    /* Change flex-direction to column for stacking image, text, and hobbies */
+    .about-content {
+        flex-direction: column; /* Stack image and text vertically */
+    }
+
+    .hobbies {
+        margin-top: 2rem; /* Ensure hobbies are below text */
+    }
 }

@@ -1,3 +1,4 @@
+/* Default styles */
 .career {
     font-size: 7rem;
     color: #747D9F;
@@ -8,7 +9,7 @@
     font-size: 2rem;
     font-family: 'JetBrains Mono', monospace;
     color: #4BD4B3;
-    margin-bottom: 0.5srem;
+    margin-bottom: 0.5rem;
 }
 
 .home-button-container {
@@ -80,4 +81,148 @@
     top: 0;
     left: 0;
     z-index: 0;
+}
+
+/* Responsive Design */
+
+@media (max-width: 1200px) {
+    .career {
+        font-size: 5rem;
+    }
+
+    .greeting {
+        font-size: 1.75rem;
+    }
+
+    .home-container {
+        margin: 20vh 0 0 15rem;
+    }
+
+    .name {
+        font-size: 6rem;
+    }
+
+    .quick-about {
+        font-size: 1.5rem;
+        margin-right: 30vw;
+    }
+
+    .home-button-container {
+        margin: 3rem 0 0 15rem;
+    }
+
+    /* Resize the threejs renderer */
+    .three-renderer {
+        width: 80%;
+        height: 80%; /* Adjust to fit better in a smaller window */
+    }
+}
+
+@media (max-width: 900px) {
+    .career {
+        font-size: 4rem;
+    }
+
+    .greeting {
+        font-size: 1.5rem;
+    }
+
+    .home-container {
+        margin: 15vh 0 0 10rem;
+    }
+
+    .name {
+        font-size: 5rem;
+    }
+
+    .quick-about {
+        font-size: 1.25rem;
+        margin-right: 25vw;
+    }
+
+    .home-button-container {
+        margin: 2rem 0 0 10rem;
+    }
+
+    .home-button {
+        font-size: 1.25rem;
+    }
+
+    /* Resize the threejs renderer */
+    .three-renderer {
+        width: 100%;
+        height: 75%; /* Slightly smaller */
+    }
+}
+
+@media (max-width: 600px) {
+    .career {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .greeting {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    .home-container {
+        margin: 10vh 0 0 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .name {
+        font-size: 4.5rem;
+    }
+
+    .quick-about {
+        font-size: 1.2rem;
+        margin-right: 0;
+    }
+
+    .home-button-container {
+        margin: 1.5rem 0 0 0;
+        text-align: center;
+    }
+
+    .home-button {
+        font-size: 1.25rem;
+        padding: 1rem;
+    }
+
+    .three-renderer {
+        display: none;  /* Hide 3D renderer on mobile */
+    }
+}
+
+@media (max-width: 400px) {
+    .career {
+        font-size: 2.5rem;
+    }
+
+    .greeting {
+        font-size: 1.15rem;
+    }
+
+    .home-container {
+        margin: 5vh 0 0 2rem;
+    }
+
+    .name {
+        font-size: 3.5rem;
+    }
+
+    .quick-about {
+        font-size: 1rem;
+    }
+
+    .home-button {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
+
+    .home-button-container {
+        margin: 1rem 0 0 0;
+    }
 }
