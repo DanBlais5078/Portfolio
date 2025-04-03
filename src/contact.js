@@ -43,7 +43,7 @@ function ContactPage() {
 
         try {
             // Send the form data to the Vercel API
-            const response = await fetch('https://portfolio-murex-nine-67.vercel.app/api/contactapi', {
+            const response = await fetch('https://portfolio-dans-projects-25d2e878.vercel.app/api/contactapi', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
