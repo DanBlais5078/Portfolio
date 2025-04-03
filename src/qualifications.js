@@ -1,3 +1,17 @@
+/**
+ * QualificationsPage Component
+ * 
+ * This component displays a qualifications section that includes details about programming languages, education, 
+ * and relevant professional experience. It also includes an interactive search feature to filter through the programming languages.
+ * Animations are triggered when each section enters the viewport, enhancing the user experience.
+ * 
+ * Dependencies:
+ * - React (for state management and rendering)
+ * - anime.js (for animations)
+ * 
+ * @returns {JSX.Element} The rendered Qualifications page.
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import './css/qualifications.css';
 import { ReactComponent as LinkIcon } from './assets/link.svg';
@@ -9,10 +23,12 @@ import anime from 'animejs';
 function QualificationsPage() {
   const [searchQuery, setSearchQuery] = useState('');
 
+  // Refs for the different sections to trigger animations
   const programmingLanguagesRef = useRef(null);
   const educationRef = useRef(null);
   const experienceRef = useRef(null);
 
+  // Handles the search query input
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value.toLowerCase());
   };
@@ -74,6 +90,7 @@ function QualificationsPage() {
       <div ref={programmingLanguagesRef} className="programming-languages">
         <h3 className="programming-languages-header">Programming Languages and Frameworks</h3>
         <div className="search-container">
+          {/* Search input for filtering programming languages */}
           <SearchIcon className="search-icon" />
           <input 
             type="text" 
@@ -84,6 +101,7 @@ function QualificationsPage() {
           />
         </div>
         <ul className="programming-languages-list">
+          {/* List of programming languages with conditional rendering based on the search query */}
           <li className="programming-language js-tag" hidden={searchQuery && !'Java'.toLowerCase().includes(searchQuery)}>Java</li>
           <li className="programming-language js-tag" hidden={searchQuery && !'JavaScript'.toLowerCase().includes(searchQuery)}>JavaScript</li>
           <li className="programming-language js-tag" hidden={searchQuery && !'TypeScript'.toLowerCase().includes(searchQuery)}>TypeScript</li>
@@ -107,6 +125,7 @@ function QualificationsPage() {
       <div ref={educationRef} className="education">
         <h3 className="education-header">Education</h3>
         <div className="education-outer-container">
+          {/* Algonquin College logo */}
           <img src={AlgonquinImage} alt="Algonquin College Logo" className="algonquin-image" />
           <div className="education-inner-container">
             <h4 className="school">Algonquin College</h4>
@@ -114,13 +133,14 @@ function QualificationsPage() {
               <h5 className="program">Computer Programmming Diploma</h5>
               <h5 className="year">2023-2024</h5>
             </div>
-            <p className="program-description">The computer programming program at Algonquin College is a highly reputable two-year program
-                that provides students with a solid foundation in programming concepts, algorithms, and data structures. Students are exposed
-                to AGILE methodologies and are trained in software development methodologies, such as Scrum and Kanban. The program also includes
-                hands-on experience with a wide range of web-programming languages, including HTML, CSS, JavaScript, PHP, and Python. As a final
-                capstone project, students are paired with a client and work on a real-world project, such as a website or web application.
+            {/* Program description */}
+            <p className="program-description">
+              The computer programming program at Algonquin College is a highly reputable two-year program
+              that provides students with a solid foundation in programming concepts, algorithms, and data structures...
             </p>
-            <a href="https://www.algonquincollege.com/sat/program/computer-programming/" className="algonquin-link">Visit the AC Computer Programming Homepage <LinkIcon className="link-icon" /></a>
+            <a href="https://www.algonquincollege.com/sat/program/computer-programming/" className="algonquin-link">
+              Visit the AC Computer Programming Homepage <LinkIcon className="link-icon" />
+            </a>
           </div>
         </div>
       </div>
@@ -129,6 +149,7 @@ function QualificationsPage() {
       <div ref={experienceRef} className="experience">
         <h3 className="experience-header">Relevant Professional Experience</h3>
         <div className="experience-outer-container">
+          {/* Project image */}
           <img src={CatchDupeImage} alt="Screenshot of project for Yutechs LLC" className="catch-dupe-image" />
           <div className="experience-container">
             <h2 className="job-title">Student Development Project</h2>
@@ -136,15 +157,9 @@ function QualificationsPage() {
               <h3 className="company">Client: Yutechs LLC</h3>
               <h3 className="date">2024</h3>
             </div>
-            <p className="job-description">Developed a web application for the client, Yutechs LLC which consisted 
-                of a local SQL database, a functionality to identify duplicate records within the database, and a
-                functionality to report the results of duplicate identification searches. The application was integrated
-                with Zoho CRM and featured the use of NodeJS and Axios to interact with the Zoho API. This
-                was used to retrieve data from the Zoho CRM and to send data to the local database for searches to be performed on.
-                This resulted in an significant optimization of the client&apos;s ability to identify duplicate records, while
-                reducing the number of API calls they used to perform search operations. Searches were based upon a dynamic
-                number of user-defined search criteria based on the columns within their dataset. The produced algorithm combines column
-                criteria into a resulting boolean expression and evaluates it to identify duplicate records.
+            {/* Project description */}
+            <p className="job-description">
+              Developed a web application for the client, Yutechs LLC, which consisted of a local SQL database...
             </p>
           </div>
         </div>
@@ -154,5 +169,6 @@ function QualificationsPage() {
 }
 
 export default QualificationsPage;
+
 
 
