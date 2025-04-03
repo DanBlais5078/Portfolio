@@ -22,7 +22,7 @@ export default async function handler(req, res) {
             from: email,
             to: process.env.EMAIL_USER,
             subject: subject,
-            text: `${message}\n\nWebsite: ${website || 'Not provided'}\n\nEmail: ${email}`,
+            text: `Website: ${website || 'Not provided'}\n\nEmail: ${email}\n\n${message}`,
         };
 
         try {
