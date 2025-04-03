@@ -188,15 +188,15 @@
     }
 
     .about-content {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column;
     }
 
     .hobbies {
-        margin-top: 2rem; /* Ensure hobbies are below text */
+        margin-top: 2rem; 
     }
 }
 
-/* Tablets and Phones (responsive layout change for stacking) */
+/* Tablets and Phones */
 @media (max-width: 900px) {
     .about {
         margin: 15vh 0 0 4rem;
@@ -240,13 +240,12 @@
         justify-content: center;
     }
 
-    /* Change flex-direction to column for stacking image, text, and hobbies */
     .about-content {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column; 
     }
 
     .hobbies {
-        margin-top: 2rem; /* Ensure hobbies are below text */
+        margin-top: 2rem;
     }
 }
 
@@ -300,13 +299,12 @@
         margin-top: 1rem;
     }
 
-    /* Change flex-direction to column for stacking image, text, and hobbies */
     .about-content {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column; 
     }
 
     .hobbies {
-        margin-top: 2rem; /* Ensure hobbies are below text */
+        margin-top: 2rem;
     }
 }
 
@@ -340,12 +338,11 @@
         margin-top: 1.5rem;
     }
 
-    /* Change flex-direction to column for stacking image, text, and hobbies */
     .about-content {
-        flex-direction: column; /* Stack image and text vertically */
+        flex-direction: column;
     }
 
     .hobbies {
-        margin-top: 2rem; /* Ensure hobbies are below text */
+        margin-top: 2rem; 
     }
 }

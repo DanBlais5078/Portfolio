@@ -1,7 +1,22 @@
+/**
+ * ContactPage Component
+ * 
+ * This component renders a contact form, allowing users to submit their details to get in touch. 
+ * Upon form submission, the fields are cleared, and a status message is displayed to indicate whether 
+ * the message was sent successfully or if an error occurred.
+ * 
+ * Dependencies:
+ * - React
+ * - CSS for styling
+ * 
+ * @returns {JSX.Element} The rendered contact form page.
+ */
+
 import React, { useState } from 'react';
 import './css/contact.css';
 
 function ContactPage() {
+    // State to hold form input values and status message
     const [formData, setFormData] = useState({
         email: '',
         subject: '',
@@ -9,8 +24,9 @@ function ContactPage() {
         website: '',  // Optional website field
     });
 
-    const [status, setStatus] = useState('');  // This will hold the status message (e.g., "Sending..." or "Success")
+    const [status, setStatus] = useState('');  // To track form submission status
 
+    // Handle input field changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -19,10 +35,11 @@ function ContactPage() {
         }));
     };
 
+    // Handle form submission
     const handleSubmit = async (e) => {
         e.preventDefault();
         
-        setStatus('Sending...');  // Show sending status
+        setStatus('Sending...');  // Set status to 'Sending' during submission
 
         try {
             // Send the form data to the Vercel API
@@ -37,13 +54,16 @@ function ContactPage() {
             const data = await response.json();
 
             if (response.ok) {
-                setStatus('Message sent successfully!');  // If the message is sent successfully
+                setStatus('Message sent successfully!');  // Success message
             } else {
-                setStatus(data.error || 'Something went wrong.');  // If there's an error
+                setStatus(data.error || 'Something went wrong.');  // Error message from API response
             }
         } catch (error) {
             console.error(error);
-            setStatus('Failed to send message.');  // Handle any other errors
+            setStatus('Failed to send message.');  // Handle unexpected errors
+        } finally {
+            // Reset form fields and status after the form submission attempt
+            setFormData({ email: '', subject: '', message: '', website: '' });
         }
     };
 
@@ -92,10 +112,11 @@ function ContactPage() {
                 />
                 <button type="submit" className="submit-btn">Submit</button>
             </form>
-            <p>{status}</p> {/* Display status message (success/error) */}
+            <p>{status}</p> {/* Displays submission status message */}
         </div>
     );
 }
 
 export default ContactPage;
+
 
