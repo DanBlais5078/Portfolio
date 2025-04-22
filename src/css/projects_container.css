@@ -96,15 +96,15 @@
   }
 
   .project-title {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 
   .description {
-    font-size: 16px;
+    font-size: 0.75rem;
   }
 
   .navigation-arrows .arrow {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
   }
 }
 

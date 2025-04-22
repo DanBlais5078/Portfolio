@@ -34,10 +34,10 @@ function ProjectsPage() {
     const panels = gsap.utils.toArray('.panel');
 
     // Loop through each panel and create a ScrollTrigger instance for pinning
-    panels.forEach((panel) => {
+    panels.forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,  // Element to observe for scrolling
-        start: 'top-=145 top',  // Start pinning after 145px from the top of the viewport
+        start: i === 0 ? 'top top+=3rem' : 'top top',  // Start pinning after 145px from the top of the viewport
         end: 'bottom top',  // Stop pinning when the panel scrolls out of the viewport
         scrub: true,  // Smooth the scroll interaction
         pin: true,    // Pin the panel in place during scrolling
