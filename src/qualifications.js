@@ -136,7 +136,8 @@ function QualificationsPage() {
             {/* Program description */}
             <p className="program-description">
               The computer programming program at Algonquin College is a highly reputable two-year program
-              that provides students with a solid foundation in programming concepts, algorithms, and data structures...
+              that provides students with a solid foundation in programming concepts, algorithms, and data structures, while
+              also equipping them with the necessary skills to interact with clients and become successful software developers.
             </p>
             <a href="https://www.algonquincollege.com/sat/program/computer-programming/" className="algonquin-link">
               Visit the AC Computer Programming Homepage <LinkIcon className="link-icon" />
@@ -159,7 +160,9 @@ function QualificationsPage() {
             </div>
             {/* Project description */}
             <p className="job-description">
-              Developed a web application for the client, Yutechs LLC, which consisted of a local SQL database...
+              Developed a web application for the client, Yutechs LLC, which consisted of a function to sync Zoho CRM data with
+              a local SQL database, an algorithm to identify duplicate records from the database using boolean and conditional logic
+              and a reporting feature to generate a report of the duplicate records.
             </p>
           </div>
         </div>

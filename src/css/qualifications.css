@@ -186,9 +186,25 @@
 
 /* Responsive Design */
 
+/* For Medium Screens (Max Width 1200px) */
 @media (max-width: 1200px) {
+    /* Image adjustments */
+    .algonquin-image {
+        height: 28vh; /* Scale down the image */
+    }
+
+    .catch-dupe-image {
+        height: 24vh; /* Scale down the image */
+    }
+
+    /* Link adjustments */
+    .algonquin-link {
+        font-size: 1.1rem; /* Reduce link text size */
+    }
+
+    /* Qualifications section adjustments */
     .qualifications {
-        margin: 5vh 0 0 12rem;
+        margin: 10vh 0 0 12rem;
     }
 
     .qualifications-header {
@@ -197,33 +213,73 @@
     }
 
     .school, .job-title {
-        font-size: 1.75rem;
+        font-size: 1.3rem; /* Reduce text size for job and school */
     }
 
     .education-header, .programming-languages-header, .experience-header {
-        font-size: 2.5rem;
+        font-size: 1.8rem; /* Reduce size of section headers */
     }
 
     .program, .year, .company, .date {
-        font-size: 1.25rem;
+        font-size: 1.1rem; /* Reduce text size for program, year, company, and date */
     }
 
+    /* Search Bar adjustments */
     .search-bar {
-        width: 80%;
+        font-size: 1rem; /* Reduce font size of search bar text */
+        width: 75%; /* Adjust the width of the search bar */
     }
 
+    /* Programming languages adjustments */
     .programming-languages {
-        margin-right: 10vw;
+        margin-right: 8vw;
+        margin-bottom: 2rem;
     }
 
     .programming-languages-list {
-        gap: 1rem;
+        gap: 0.2rem; /* Reduce gap between programming language list items */
     }
 
     .programming-language {
-        font-size: 1.5rem;
+        font-size: 1.3rem; /* Reduce font size for programming languages */
+    }
+
+    .experience {
+        margin-top: 2rem;
+    }
+
+    /* Adjust the qualifications section layout */
+    .program-container, .career-container {
+        margin-bottom: 1rem; /* Reduce space between career items */
+    }
+
+    .program-description, .job-description {
+        font-size: 1.2rem; /* Reduce description text size */
+    }
+
+    .link-icon {
+        margin-left: 0.5rem;
+        font-size: 1rem; /* Reduce link icon font size */
+    }
+
+    /* Search Container */
+    .search-container {
+        margin: 1rem 0 1rem 0; /* Reduce vertical space for the search bar */
+    }
+
+    .search-icon {
+        margin-right: 0.5rem;
+        font-size: 1rem;
+    }
+
+    /* Adjust qualification tags */
+    .js-tag, .css-tag, .html-tag, .php-tag, .python-tag, .sql-tag {
+        font-size: 1rem;
+        padding: 0.3rem 1.5rem;
+        margin: 0.1rem;
     }
 }
+
 
 @media (max-width: 900px) {
     .qualifications {
