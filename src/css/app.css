@@ -1,3 +1,6 @@
+/* Default Styles for Nav and Sidebar */
+
+/* Navigation */
 .nav {
     display: flex;
     align-items: center;
@@ -14,7 +17,7 @@
 .nav-logo {
     fill: #4BD4B3;
     max-width: 60px;
-    height: auto; 
+    height: auto;
 }
 
 .nav-logo:hover {
@@ -58,7 +61,7 @@
 }
 
 .nav-link:hover::after,
-.nav-link.active::after  { 
+.nav-link.active::after { 
     transform: scaleX(1);
 }
 
@@ -73,6 +76,7 @@
     font-size: 1.5rem;
 }
 
+/* Sidebar */
 .sidebar {
     display: flex;
     align-items: center;
@@ -130,3 +134,108 @@
         fill: url(#gradient);
     }
 }
+
+/* --- Responsive Design --- */
+
+/* For Medium Screens (Max Width 1200px) */
+@media (max-width: 1200px) {
+    .nav-logo {
+        max-width: 50px; /* Scale down logo */
+    }
+
+    .nav-link {
+        font-size: 1rem; /* Reduce link font size */
+        margin: 1.5rem; /* Adjust margin */
+    }
+
+    .nav-links {
+        padding: 2rem 3rem 0 0;
+    }
+
+    .sidebar {
+        width: 10rem; /* Narrow sidebar */
+    }
+
+    .sidebar-items {
+        margin-bottom: 2rem; /* Reduce space for items */
+    }
+
+    .sidebar-link {
+        margin: 1rem 0; /* Adjust space between sidebar items */
+    }
+}
+
+/* For Small Screens (Max Width 768px) */
+@media (max-width: 768px) {
+    /* Navigation Adjustments */
+    .nav {
+        padding: 0 1rem; /* Adjust nav padding */
+        height: 50px; /* Reduce nav height */
+    }
+
+    .nav-logo {
+        max-width: 40px; /* Scale down logo even further */
+    }
+
+    .nav-links {
+        display: none; /* Hide links on mobile */
+    }
+
+    .sidebar {
+        width: 8rem; /* Even narrower sidebar */
+        top: 50px; /* Adjust to fit smaller screen */
+    }
+
+    .sidebar-items {
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-link {
+        margin: 0.8rem 0; /* Further reduce space between items */
+    }
+
+    .nav-link {
+        font-size: 1rem; /* Smaller text for nav links */
+        margin: 1rem 0.8rem; /* Adjust margin */
+    }
+
+    .sidebar-items {
+        margin-top: 1rem; /* Add top margin to fit mobile style */
+    }
+}
+
+/* For Extra Small Screens (Max Width 480px) */
+@media (max-width: 480px) {
+    /* Navigation Adjustments */
+    .nav {
+        height: 45px; /* Reduce nav height further */
+    }
+
+    .nav-logo {
+        max-width: 35px; /* Further reduce logo size */
+    }
+
+    .nav-link {
+        font-size: 0.9rem; /* Small font size */
+        margin: 0.8rem 0.5rem; /* Tighten spacing */
+    }
+
+    .sidebar {
+        width: 6rem; /* Very narrow sidebar */
+        top: 45px; /* Adjust for mobile */
+    }
+
+    .sidebar-items {
+        margin-bottom: 1rem; /* Compact item spacing */
+    }
+
+    .sidebar-link {
+        margin: 0.5rem 0; /* Even tighter spacing */
+    }
+
+    .nav-links {
+        display: block; /* Make links appear on small screens */
+        padding: 1rem 0; /* Adjust padding */
+    }
+}
+

@@ -212,6 +212,10 @@
         width: 80%;
     }
 
+    .programming-languages {
+        margin-right: 10vw;
+    }
+
     .programming-languages-list {
         gap: 1rem;
     }
